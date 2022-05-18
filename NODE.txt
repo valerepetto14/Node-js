@@ -1,0 +1,7 @@
+NODE
+
+Node es un entorno de ejecución para JavaScript construido con V8, motor de JavaScript de Chrome.
+
+respuesta.send("hola mundo") - esto permite mandarle texto al navegador
+
+express generator nos genera ya toda una estructura
