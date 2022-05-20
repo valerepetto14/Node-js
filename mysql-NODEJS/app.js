@@ -21,20 +21,20 @@ function mostrar(){
 
         filas.forEach(fila => {
             console.log(fila);
+         });
     });
-    });
-}
+};
 
-function insert(nombre, apellido)
-    var insertquery = "INSERT INTO personas (nombre, apellido) VALUES ?";
-    var values = [nombre, apelido];
-    conexion.query(insertquery,[values], function (error, results) {
+function insert(nombre, apellido){
+    conexion.query(`INSERT INTO personas (nombre, apellido) VALUES ('${nombre}','${apellido}')`, function (error, results) {
         if (error)
             throw error;
         else{
             console.log("AGREGADO",results);
         }
-    });
+    })
+};
+
 
 insert("santiago","neira");
 mostrar();
