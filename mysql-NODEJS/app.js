@@ -36,6 +36,6 @@ function insert(nombre, apellido){
 };
 
 
-insert("santiago","neira");
+insert("Mateo","Arbini");
 mostrar();
 conexion.end();
