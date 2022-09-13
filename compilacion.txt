@@ -1,0 +1,13 @@
+El proceso de compilado de JavaScript no es como el de muchos otros lenguajes compilados bien conocidos que generan un archivo .exe u otro archivo final, pero, sí que se debe realizar mucho de este proceso de pre-compilación y ejecución para que un programa escrito en JavaScript pueda ser valido y no presente errores que puedan invalidar el programa, incluso el motor V8 de Chrome utilizado para convertir JavaScript en código maquina en el navegador (y también utilizado por Node.js) necesita de dos compiladores: El primero compila rápidamente JavaScript utilizando una estrategia IC (Inline Cache) pero crea código no optimizado y, el segundo, es un optimizador que toma como input el código generado por el primer compilador y lo optimiza de la mejor manera posible.
+
+El proceso de compilado de JavaScript no es el mismo que esperarías en lenguajes como C++ u otro lenguaje de este tipo, debido a esto, tú incluso podrías argumentar que JavaScript no es un lenguaje 100% compilado, si no, más bien, un lenguaje híbrido (interpretado y compilado).
+
+La cosa es que Javascript a diferencia de los lenguajes tradicionalmente compilados, no se compila de manera anticipada y tampoco los resultados de su compilación son portables entre varios sistemas distribuidos (como en el caso de Java, C/C++).
+
+En JavaScript la compilación sucede justo antes de ejecutar el código.
+
+En conclusión, Javascript es un lenguaje compilado y por lo tanto, cualquier fragmento de código tiene que ser compilado inmediatamente antes de que se ejecute. La razón de porque se creé que Javascript es interpretado es porque el navegador es un interprete que traduce código HTML y CSS (tambien php el cual es un lenguaje interpretado), sin embargo como recordaran los navegadores tambien tienen embebidos un Engine para trabajar con Javascript, un ejemplo claro es el caso del V8 Engine en Chrome, el cual se comunica con el compilador y el scope (de este ultimo les contaré mas adelante).
+
+No, era interpretado antiguamente, en la actualidad, el navegador lo compila antes de ejecutarlo. El motor de Chrome se llama V8, este hace una compilación previa ligera, y en las partes (bucles) que observa que el código se repite se compila a alto rendimiento. Hoy día JavaScript no es ningún lenguaje de juguete y tiene una velocidad excelente. Saludos
+
+Un lenguaje de scripting es un tipo de lenguaje de programación informático utilizado para proporcionar instrucciones, llamadas scripts, al software. Los scripts contienen una serie de comandos que un software, una aplicación o un motor de scripting interpreta de uno en uno dentro de un entorno de ejecución.
