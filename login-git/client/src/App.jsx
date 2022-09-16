@@ -1,22 +1,49 @@
-import React from "react";
-import {Route, Routes} from "react-router-dom";
-import Home from './views/Home'
-import Login from './views/Login'
-import Menu from './views/Menu'
-import Register from './views/Register'
+import "./app.css";
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-import './app.css'
-function App() {
+const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const getUser = () => {
+      fetch("http://localhost:5000/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
+        .then((resObject) => {
+          setUser(resObject.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
+  }, []);
+  
   return (
-    <div className="App">
+    <BrowserRouter>
+    <div>
       <Routes>
-        <Route path='/' element={ <Home /> } />
-        <Route path='/login' element={ <Login /> } />
-        <Route path='/register' element={ <Register/> } />
-        <Route path='/menu' element={ <Menu></Menu> } />
+        <Route
+          path="/"
+          element={user ? <Menu user={user}></Menu> : <Home />}
+        />
       </Routes>
     </div>
-   );
-}
+  </BrowserRouter>
+  );
+};
+
 export default App;
- 
