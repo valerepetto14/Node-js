@@ -16,6 +16,7 @@ Button {
   height: 60px;
   font-size: 10px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #0c452e;
   color: white;
@@ -28,4 +29,16 @@ Button {
   border-radius: 150px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+#name_app {
+  margin-right: 15px;
+  font-size: 34px;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.name_img{
+  display: flex;
+  align-items: center;
 }
