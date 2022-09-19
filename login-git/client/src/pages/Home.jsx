@@ -14,7 +14,7 @@ const Home = () => {
         <div className="home">
             <h1>Welcome</h1>
             <Button variant="secondary" onClick={github}>
-                <Link className="link" to="/menu">Log in with Github</Link>
+                Log in with Github
             </Button>{' '}
         </div>
     )

@@ -38,7 +38,11 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={user ? <Menu user={user}></Menu> : <Home />}
+          element={user ? <Menu></Menu> : <Home />}
+        />
+         <Route
+          path="/menu"
+          element={<Menu></Menu>}
         />
       </Routes>
     </div>
