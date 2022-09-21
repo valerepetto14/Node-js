@@ -17,4 +17,4 @@ jobs:
       - name: install dependencias
         run: npm install
       - name: correr test
-        run: echo "hola"
+        run: ls -l
