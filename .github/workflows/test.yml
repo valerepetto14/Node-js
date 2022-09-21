@@ -14,7 +14,16 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - name: install dependencias
+          cache: npm
+          
+      - uses: actions/cache@v2
+        id: npm-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package.lock') }}
+
+      - name: Install dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
-      - name: correr test
-        run: npm run test
+
+      - run: npm run test
