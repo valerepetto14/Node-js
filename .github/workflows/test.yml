@@ -17,4 +17,4 @@ jobs:
       - name: install dependencias
         run: npm install
       - name: correr test
-        run: cat package.json
+        run: npm run test
