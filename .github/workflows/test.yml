@@ -3,4 +3,4 @@ name: test
 on:
   push:
     branches:
-      - master
+      - test
