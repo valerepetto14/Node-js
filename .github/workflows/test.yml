@@ -5,28 +5,16 @@ on:
       - testeo
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
         with:
-          node-version: '16'
-
-      - name: Prepare cache
-        uses: actions/cache@v2
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
+          node-version: "16"
+      - name: install dependencias
         run: npm install
-
-      - name: Run tests
-        run: npm run test
-          shell: bash
-        
+      - name: correr test
+        run: npm test
