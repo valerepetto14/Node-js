@@ -11,3 +11,5 @@ test("impar", () => {
     expect(par_impar(7)).toBe('impar')
     expect(par_impar(9)).toBe('impar')
 })
+
+let hola = "hola";
