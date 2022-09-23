@@ -1,0 +1,3 @@
+permitir ingresar a mysql desde cualquier lado - sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+crear usuario que pueda ser accedido desde cualquier lado con %
+darle permisos

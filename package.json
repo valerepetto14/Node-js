@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/valerepetto14/Node-js#readme",
   "dependencies": {
-    "google-auth-library": "^8.5.1"
+    "google-auth-library": "^8.5.1",
+    "mysql": "^2.18.1"
   },
-  "jest" : {
+  "jest": {
     "testEnvironment": "node"
   }
 }
