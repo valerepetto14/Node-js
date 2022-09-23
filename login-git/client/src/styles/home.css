@@ -1,0 +1,35 @@
+.home {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 100px;
+    color: #0c452e;
+    font-size: 60px;
+}
+
+button {
+margin: 10px;
+width: 300px;
+font-size: 20px;
+padding: 10px;
+border: 0px solid black;
+border-radius: 15px;
+background-color: black;
+}
+
+.link {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color:#5b9656;
+}
