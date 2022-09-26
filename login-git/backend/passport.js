@@ -21,7 +21,7 @@ passport.use(
   )
 );
 
-
+//hola
 passport.serializeUser((user, done) => {
   done(null, user);
 });
