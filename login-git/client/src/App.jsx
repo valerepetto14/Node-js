@@ -13,7 +13,7 @@ const App = () => {
     const getUser = () => {
       axios.get("http://54.94.125.72:5000/auth/login/success")
         .then((response) => {
-          if (response.status === 304) {
+          if (response.status === 200) {
             setUser(response.data.user);
           }
           throw new Error("authentication has been failed!");

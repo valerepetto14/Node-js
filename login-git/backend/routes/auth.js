@@ -14,6 +14,10 @@ router.get("/login/success", (req, res) => {
   }
 });
 
+router.get("/data",(req,res)=>{
+  res.send("hola")
+})
+
 router.get("/login/failed", (req, res) => {
   res.status(401).json({
     success: false,
