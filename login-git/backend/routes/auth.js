@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-const CLIENT_URL = "http://localhost:3000/";
+const CLIENT_URL = "http://54.167.61.17:3000/";
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
@@ -32,7 +32,7 @@ router.get("/github", passport.authenticate("github", { scope: ["profile"] }));
 router.get(
   "/github/callback",
   passport.authenticate("github", {
-    successRedirect: "http://localhost:3000/menu",
+    successRedirect: "http://54.167.61.17:3000/menu",
     failureRedirect: "/login/failed",
   })
 );
