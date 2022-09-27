@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     const getUser = () => {
-      axios.get("http://localhost:5000/auth/login/success")
+      axios.get("http://54.94.125.72:5000/auth/login/success")
         .then((response) => {
           if (response.status === 304) {
             setUser(response.data.user);

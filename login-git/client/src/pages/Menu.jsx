@@ -12,7 +12,7 @@ const Menu = () => {
 
   useEffect(() => {
     const getUser = () => {
-      axios.get("http://localhost:5000/auth/login/success")
+      axios.get("http://54.94.125.72:5000/auth/login/success")
         .then((response) => {
           if (response.status === 200) {
             setUser(response.data.user);
@@ -26,7 +26,7 @@ const Menu = () => {
     getUser();
   }, []);
     const logout = () => {
-        window.open("http://localhost:5000/auth/logout", "_self");
+        window.open("http://54.94.125.72:5000/auth/logout", "_self");
         document.cookie = "session=; max-age=0";
       };
     

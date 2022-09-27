@@ -6,7 +6,7 @@ import '../styles/home.css'
 const Home = () => {
 
     const github = () => {
-        window.open("http://localhost:5000/auth/github", "_self");
+        window.open("http://54.94.125.72:5000/auth/github", "_self");
       };
       
     return (
