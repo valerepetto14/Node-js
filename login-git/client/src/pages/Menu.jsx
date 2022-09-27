@@ -1,31 +1,23 @@
 import React from "react";
-import {BrowserRouter, Link} from "react-router-dom";
+import axios from "axios"
 import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
-
 import '../styles/home.css'
+
+axios.defaults.withCredentials = true
 
 const Menu = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const getUser =  async () => {
-      fetch("http://localhost:5000/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
+    const getUser = () => {
+      axios.get("http://localhost:5000/auth/login/success")
         .then((response) => {
-          if (response.status === 200) return response.json();
+          if (response.status === 200) {
+            setUser(response.data.user);
+          }
           throw new Error("authentication has been failed!");
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
         })
         .catch((err) => {
           console.log(err);

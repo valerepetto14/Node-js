@@ -1,29 +1,22 @@
 import "./app.css";
+import axios from "axios"
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+axios.defaults.withCredentials = true
+ 
 const App = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
+      axios.get("http://localhost:5000/auth/login/success")
         .then((response) => {
-          if (response.status === 200) return response.json();
+          if (response.status === 304) {
+            setUser(response.data.user);
+          }
           throw new Error("authentication has been failed!");
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
         })
         .catch((err) => {
           console.log(err);
